@@ -3,7 +3,25 @@
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
-    <body>
-        <div>{{some}}</div>
-    </body>
+<body>
+<div>
+    <form method="post">
+        <input type="text" name="text" placeholder="Ввидіть текст повідомлення">
+        <input type="text" name="tag" placeholder="Тег">
+        <button type="submit">Добавить</button>
+    </form>
+    <form method="post" action="filter">
+        <input type="text" name="filter">
+        <button type="submit">Знайти</button>
+    </form>
+</div>
+<div>Список повідомлень</div>
+{{#messages}}
+    <div>
+        <b>{{id}}</b>
+        <span>{{text}}</span>
+        <i>{{tag}}</i>
+    </div>
+{{/messages}}
+</body>
 </html>
